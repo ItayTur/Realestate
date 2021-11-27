@@ -40,7 +40,6 @@ const Banner = ({
 const Home = ({ propertiesForSale, propertiesForRent }) => {
   return (
     <Box>
-      <h1>Home</h1>
       <Banner
         purpose="RENT A HOME"
         title1="Rental Homes for"
