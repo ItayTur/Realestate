@@ -44,13 +44,7 @@ const ImageScrollbar = ({ photos }) => {
       style={{ overflow: "hidden" }}
     >
       {photos.map((photo) => (
-        <Box
-          key={photo.id}
-          width="910px"
-          itemId={photo.id}
-          overflow="hidden"
-          p="1"
-        >
+        <Box key={photo.id} width="910px" overflow="hidden" p="1">
           <Image
             placeholder="blur"
             blurDataURL={photo.url}

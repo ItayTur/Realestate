@@ -15,14 +15,17 @@ import Image from "next/image";
 import { filterData, getFilterValues } from "../utils/filterData";
 
 const SearchFilters = () => {
-  const [filters, setFilters] = useState(filterData);
+  const [filters] = useState(filterData);
   const router = useRouter();
 
   const searchProperties = (filterValues) => {
     const { pathname, query } = router;
     const values = getFilterValues(filterValues);
 
-    values.forEach((value) => (query[value.name] = value.value));
+    values.forEach(({ value, name }) => {
+      if (value && filterValues?.[name]) query[name] = value;
+    });
+
     router.push({ pathname, query });
   };
 
